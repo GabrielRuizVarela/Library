@@ -70,6 +70,9 @@ function addBooktoLibrary(){
 }
 
 function drawCards(){
+    // console.log(statusButtons)
+    if(statusButtons){statusButtons.forEach(item => item.removeEventListener('mouseup',e=>toggleStatus(e)))};
+    if(removeButtons){removeButtons.forEach(item => item.removeEventListener('mouseup',e=>removeBook(e)))};
     bookContainer.innerHTML = '';
     myLibrary.forEach((book,item)=>setupCards(book,item));
     statusButtons = document.querySelectorAll('.status'); 
