@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <!-- Normalize -->
+    <link href="https://unpkg.com/@csstools/normalize.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        Library
+    </header>
+    <div class="main-container">
+        <button class="add">+ Add Book</button>
+        <div class="book-container">
+            <div class="card">
+                <div class="info">Author:</div><div class="added" id="author">george</div>
+                <span></span>
+                <div class="info">Title:</div><div class="added" id="title">mansion</div>
+                <span></span>
+                <div class="info">Year:</div><div class="added" id="year">1992</div>
+                <button class="status not-read">Not read</button>
+                <button class="remove">Remove</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">by Gabriel Ruiz Varela</footer>
+
+
+    <div class="add-container">
+        <h3>Add new book</h3>
+        <div class="card">
+            <div class="info">Author:</div>
+            <input type="text" name="author" id="entry-author">
+            <span></span>
+            <div class="info">Title:</div><input type="text" name="title" id="entry-title">
+            <span></span>
+            <div class="info">Year:</div><input type="text" name="year" id="entry-year">
+            <button class="status not-read" id="entry-status">Not read</button>
+            <input type="submit" value="Submit" class="submit">
+            <!-- <button class="remove">Submit</button> -->
+        </div>
+    </div>
+    <div class="overlay"></div>
+
+
+</body>
+</html>
