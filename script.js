@@ -9,6 +9,7 @@ const author = document.querySelector('#entry-author');
 const title = document.querySelector('#entry-title');
 const year = document.querySelector('#entry-year');
 const entryStatus = document.querySelector('#entry-status');
+let statusButtons, removeButtons;
 addButton.addEventListener('click', enableOverlay);
 document.addEventListener('mouseup', e => clickOverlay(e));
 document.addEventListener('keydown', e => escapeOverlay(e));
@@ -71,8 +72,8 @@ function addBooktoLibrary(){
 function drawCards(){
     bookContainer.innerHTML = '';
     myLibrary.forEach((book,item)=>setupCards(book,item));
-    let statusButtons = document.querySelectorAll('.status'); 
-    let removeButtons = document.querySelectorAll('.remove');
+    statusButtons = document.querySelectorAll('.status'); 
+    removeButtons = document.querySelectorAll('.remove');
     statusButtons.forEach(item => item.addEventListener('mouseup',e=>toggleStatus(e)));
     removeButtons.forEach(item => item.addEventListener('mouseup',e=>removeBook(e)));
 }
