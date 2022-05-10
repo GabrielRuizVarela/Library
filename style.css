@@ -90,13 +90,10 @@ button.add {
     background-color: var(--color-4);
 }    
 
-
 .info {
     font-size: 1.1rem;
     padding: 0.8rem;
 }
-
-
 
 .overlay {
     display: none;
@@ -167,4 +164,9 @@ input[type='submit'] {
 
 .active {
     display: block;
+}
+
+a{
+    color: black;
+    text-decoration: none;
 }
