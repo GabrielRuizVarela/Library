@@ -1,12 +1,3 @@
-let myLibrary = [];
-
-function Book(author, title, year, read) {
-    this.author = author;
-    this.title = title;
-    this.year = year;
-    this.read = read;
-}
-
 
 // ============= // 
 const addButton = document.querySelector('.add');
@@ -18,16 +9,23 @@ const author = document.querySelector('#entry-author');
 const title = document.querySelector('#entry-title');
 const year = document.querySelector('#entry-year');
 const entryStatus = document.querySelector('#entry-status');
-// const statusButtons = document.querySelectorAll('.entry-status'); 
-// const removeButtons = document.querySelectorAll('.remove');
 addButton.addEventListener('click', enableOverlay);
 document.addEventListener('mouseup', e => clickOverlay(e));
 document.addEventListener('keydown', e => escapeOverlay(e));
 submit.addEventListener('click',addBooktoLibrary);
 entryStatus.addEventListener('mouseup',e=>toggleStatus(e));
-// removeButtons.forEach(item => item.addEventListener('mouseup',e=>removeBook(e)));
+
+let myLibrary = [];
+
+function Book(author, title, year, read) {
+    this.author = author;
+    this.title = title;
+    this.year = year;
+    this.read = read;
+}
 
 // ======= //
+
 function enableOverlay(){
    overlay.classList.add('active');
    addContainer.classList.add('active');
@@ -58,10 +56,8 @@ function toggleStatus(e){
         e.target.textContent = 'Not read';
     }
 }
-// ======= //
-function createBook(){
 
-}
+// ======= //
 
 function addBooktoLibrary(){
     let read = true;
@@ -74,16 +70,14 @@ function addBooktoLibrary(){
 
 function drawCards(){
     bookContainer.innerHTML = '';
-    // console.log(myLibrary);
     myLibrary.forEach((book,item)=>setupCards(book,item));
-    const statusButtons = document.querySelectorAll('.status'); 
-    const removeButtons = document.querySelectorAll('.remove');
+    let statusButtons = document.querySelectorAll('.status'); 
+    let removeButtons = document.querySelectorAll('.remove');
     statusButtons.forEach(item => item.addEventListener('mouseup',e=>toggleStatus(e)));
     removeButtons.forEach(item => item.addEventListener('mouseup',e=>removeBook(e)));
 }
 
 function setupCards(book,index){
-    // console.log(book)
     if(!book.read){
             bookContainer.innerHTML+=`<div class="card" data-order="${index}">
                 <div class="info">Author:</div><div class="added" id="author">${book.author}</div>
