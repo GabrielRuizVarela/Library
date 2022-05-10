@@ -81,7 +81,8 @@ button.add {
     background-color: var(--color-1);
 }    
 
-.status{
+.status,
+.entry-status {
     background-color: var(--color-3);
 }
 

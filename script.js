@@ -18,13 +18,13 @@ const author = document.querySelector('#entry-author');
 const title = document.querySelector('#entry-title');
 const year = document.querySelector('#entry-year');
 const entryStatus = document.querySelector('#entry-status');
-// const statusButtons = document.querySelectorAll('.status'); 
+// const statusButtons = document.querySelectorAll('.entry-status'); 
 // const removeButtons = document.querySelectorAll('.remove');
 addButton.addEventListener('click', enableOverlay);
 document.addEventListener('mouseup', e => clickOverlay(e));
 document.addEventListener('keydown', e => escapeOverlay(e));
 submit.addEventListener('click',addBooktoLibrary);
-// statusButtons.forEach(item => item.addEventListener('mouseup',e=>toggleStatus(e)));
+entryStatus.addEventListener('mouseup',e=>toggleStatus(e));
 // removeButtons.forEach(item => item.addEventListener('mouseup',e=>removeBook(e)));
 
 // ======= //
