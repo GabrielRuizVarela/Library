@@ -71,14 +71,14 @@ function addBooktoLibrary(){
 
 function drawCards(){
     // console.log(statusButtons)
-    if(statusButtons){statusButtons.forEach(item => item.removeEventListener('mouseup',e=>toggleStatus(e)))};
-    if(removeButtons){removeButtons.forEach(item => item.removeEventListener('mouseup',e=>removeBook(e)))};
+    if(statusButtons){statusButtons.forEach(item => item.removeEventListener('mouseup',toggleStatus))};
+    if(removeButtons){removeButtons.forEach(item => item.removeEventListener('mouseup',removeBook))};
     bookContainer.innerHTML = '';
     myLibrary.forEach((book,item)=>setupCards(book,item));
     statusButtons = document.querySelectorAll('.status'); 
     removeButtons = document.querySelectorAll('.remove');
-    statusButtons.forEach(item => item.addEventListener('mouseup',e=>toggleStatus(e)));
-    removeButtons.forEach(item => item.addEventListener('mouseup',e=>removeBook(e)));
+    statusButtons.forEach(item => item.addEventListener('mouseup',toggleStatus));
+    removeButtons.forEach(item => item.addEventListener('mouseup',removeBook));
 }
 
 function setupCards(book,index){
